@@ -20,7 +20,22 @@ componentDidMount() {
     .catch( error => console.error(error))
 }
 
+  addReservation = NewReservation => {
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(NewReservation),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
 
+    fetch('http://localhost:3001/api/v1/ideas', options)
+      .then(response =>  response.json())
+      .then(reservation => this.setState({
+        reservations: [...this.state.reservations, reservation]
+      }))
+      .catch(error => console.error(error))
+  }
 
   render() {
     return (
