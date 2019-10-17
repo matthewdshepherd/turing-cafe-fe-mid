@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
-import getReservations from '../apiCalls/apiCalls.js'
+// import { getReservations } from '../ApiCalls/apiCalls'
 
 class App extends Component {
 constructor() {
   super()
   this.state = {
     reservations: [],
+    error: ''
   }
 }
 
 componentDidMount() {
-  getReservations()
-    .then( reservations => this.setState({ reservations}))
+  // getReservations()
+  fetch('http://localhost:3001/api/v1/reservations')
+    .then ( response => response.json())
+    .then(reservations => this.setState({ reservations: reservations}))
+    .catch( error => console.error(error))
 }
 
   render() {
