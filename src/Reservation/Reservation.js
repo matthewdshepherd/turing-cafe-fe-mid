@@ -2,7 +2,7 @@ import React from 'react'
 
 const Reservation = ({ id, name, date, time, number}) => {
   return (
-    <div key={id} className={reservationCard}>
+    <div key={id} className={'reservationCard'}>
       <h3>{name}</h3>
       <p>{date}</p>
       <p>{time}</p>
@@ -10,3 +10,5 @@ const Reservation = ({ id, name, date, time, number}) => {
     </div>
   )
 }
+
+export default Reservation

@@ -11,9 +11,10 @@ const ReservationsContainer = ({ reservations }) => {
       number={reservation.number}
     />
   })
+  
   return (
     <div>
-
+      {reservationCards}
     </div>
   )
 }
