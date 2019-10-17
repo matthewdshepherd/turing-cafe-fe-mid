@@ -37,13 +37,18 @@ componentDidMount() {
       .catch(error => console.error(error))
   }
 
-  removeReservation = id => {
+  removeReservation = (id) => {
     const options = {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
       }
     }
+
+    fetch(`http://localhost:3001/api/v1/reservations/${id}`, options)
+      .then(response => response.json())
+      .then(reservations => this.setState({ reservations: reservations }))
+      .catch(error => console.error(error))
   }
 
   render() {
@@ -57,6 +62,7 @@ componentDidMount() {
         <div className='resy-container'>
           <ReservationsContainer 
           reservations={this.state.reservations} 
+          removeReservation={this.removeReservation}
           />
         </div>
       </div>
