@@ -37,6 +37,15 @@ componentDidMount() {
       .catch(error => console.error(error))
   }
 
+  removeReservation = id => {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+  }
+
   render() {
     return (
       <div className="App">
