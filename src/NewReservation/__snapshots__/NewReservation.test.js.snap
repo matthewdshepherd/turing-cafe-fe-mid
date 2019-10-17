@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewReservation should match the snapshot with all data passed in correctly 1`] = `
+<form
+  className="NewReservation"
+>
+  <div
+    className="labelInput__div"
+  >
+    <label
+      className="NewReservationLabel"
+      htmlFor="name"
+    >
+      Name
+    </label>
+    <input
+      className="NewReservationInput"
+      id="name"
+      name="name"
+      onChange={[Function]}
+      placeholder="Name"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="labelInput__div"
+  >
+    <label
+      className="NewReservationLabel"
+      htmlFor="date"
+    >
+      Date
+    </label>
+    <input
+      className="NewReservationInput"
+      id="date"
+      name="date"
+      onChange={[Function]}
+      placeholder="Date (mm/dd)"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="labelInput__div"
+  >
+    <label
+      className="NewReservationLabel"
+      htmlFor="time"
+    >
+      Time
+    </label>
+    <input
+      className="NewReservationInput"
+      id="time"
+      name="time"
+      onChange={[Function]}
+      placeholder="Time"
+      type="time"
+      value=""
+    />
+  </div>
+  <div
+    className="labelInput__div"
+  >
+    <label
+      className="NewReservationLabel"
+      htmlFor="number"
+    >
+      Number Of Guests
+    </label>
+    <input
+      className="NewReservationInput"
+      id="number"
+      name="number"
+      onChange={[Function]}
+      placeholder="Number Of Guests"
+      type="text"
+      value=""
+    />
+  </div>
+  <button
+    className="makeReservationButton"
+    onClick={[Function]}
+    type="button"
+  >
+    Make Reservation
+  </button>
+</form>
+`;
