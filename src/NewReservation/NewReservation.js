@@ -5,7 +5,6 @@ export class NewReservation extends React.Component {
   constructor() {
     super()
       this.state = {
-        id: 0,
         name: '',
         date: '',
         time: '',
@@ -17,6 +16,23 @@ export class NewReservation extends React.Component {
   handlChange = event => {
     console.log(event)
     this.setState({ [event.target.name]: event.target.value })
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const { addReservation } = this.props;
+    const newReservation = { ...this.state, id: date.Now()};
+    addReservation(newReservation)
+    this.resetInputs();
+  }
+
+  resetInputs = () => {
+    this.setState({
+      name: '',
+      date: '',
+      time: '',
+      number: null
+    })
   }
 
   render() {
