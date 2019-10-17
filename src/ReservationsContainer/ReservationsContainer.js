@@ -5,7 +5,7 @@ import Reservation from '../Reservation/Reservation'
 
 const ReservationsContainer = ({ reservations }) => {
   const reservationCards = reservations.map( reservation => {
-    return <Reservation 
+    return <Reservation key={reservation.id}
       id={reservation.id}
       name={reservation.name}
       date={reservation.date}

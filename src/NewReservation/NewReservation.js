@@ -8,20 +8,22 @@ export class NewReservation extends React.Component {
         name: '',
         date: '',
         time: '',
-        number: null
+        number: ''
       }
     
   }
 
   handlChange = event => {
-    console.log(event)
     this.setState({ [event.target.name]: event.target.value })
   }
 
   handleSubmit = event => {
-    event.preventDefault();
+    event.preventDefault()
+    console.log(event)
     const { addReservation } = this.props;
-    const newReservation = { ...this.state, id: date.Now()};
+    console.log(addReservation)
+    const newReservation = { ...this.state, id: Date.now()};
+    console.log(newReservation)
     addReservation(newReservation)
     this.resetInputs();
   }
@@ -31,7 +33,7 @@ export class NewReservation extends React.Component {
       name: '',
       date: '',
       time: '',
-      number: null
+      number: ''
     })
   }
 
@@ -56,7 +58,7 @@ export class NewReservation extends React.Component {
           id='date'
           type='text'
           name='date'
-          placeholder='Date'
+          placeholder='Date (mm/dd)'
           onChange={this.handlChange}
           value={this.state.date} />
         </div>
@@ -72,17 +74,21 @@ export class NewReservation extends React.Component {
           value={this.state.time} />
         </div>
         <div className={'labelInput__div'}>
-         <label htmlFor='numOfGuests' className='NewReservationLabel'>Number Of Guests</label>
+         <label htmlFor='number' className='NewReservationLabel'>Number Of Guests</label>
           <input
           className='NewReservationInput'
-          id='numOfGuests'
-          type='number'
-          name='numOfGuests'
+          id='number'
+          type='text'
+          name='number'
           placeholder='Number Of Guests'
           onChange={this.handlChange}
           value={this.state.number} />
         </div>
-        <button className={'makeReservationButton'}>Make Reservation</button>
+        <button 
+        type='button'
+        className={'makeReservationButton'}
+          onClick={(event) => this.handleSubmit(event)}
+        >Make Reservation</button>
       </form>
     )
   }

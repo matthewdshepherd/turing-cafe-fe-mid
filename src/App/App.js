@@ -29,7 +29,7 @@ componentDidMount() {
       }
     };
 
-    fetch('http://localhost:3001/api/v1/ideas', options)
+    fetch('http://localhost:3001/api/v1/reservations', options)
       .then(response =>  response.json())
       .then(reservation => this.setState({
         reservations: [...this.state.reservations, reservation]
@@ -41,12 +41,14 @@ componentDidMount() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
-        <NewReservation />
+        <NewReservation addReservation={this.addReservation}/>
         <div className='resy-form'>
 
         </div>
         <div className='resy-container'>
-          <ReservationsContainer reservations={this.state.reservations} />
+          <ReservationsContainer 
+          reservations={this.state.reservations} 
+          />
         </div>
       </div>
     )
