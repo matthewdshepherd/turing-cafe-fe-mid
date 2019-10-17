@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import getReservations from '../apiCalls/apiCalls.js'
 
 class App extends Component {
 constructor() {
@@ -10,7 +11,8 @@ constructor() {
 }
 
 componentDidMount() {
-  
+  getReservations()
+    .then( reservations => this.setState({ reservations}))
 }
 
   render() {
