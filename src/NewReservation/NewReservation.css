@@ -1,0 +1,10 @@
+.NewReservation {
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+}
+.labelInput__div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

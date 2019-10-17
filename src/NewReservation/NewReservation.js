@@ -1,23 +1,30 @@
 import React from 'react'
+import './NewReservation.css'
 
 export class NewReservation extends React.Component {
   constructor() {
-    super{
+    super()
       this.state = {
-        id: 0
+        id: 0,
         name: '',
         date: '',
         time: '',
-        number: 0
+        number: null
       }
-    }
+    
+  }
+
+  handlChange = event => {
+    console.log(event)
+    this.setState({ [event.target.name]: event.target.value })
   }
 
   render() {
     return (
       <form className={'NewReservation'}>
-        <label htmlFor='name' className='NewReservationLabel'>Name</label>
-        <input
+        <div className={'labelInput__div'}>
+          <label htmlFor='name' className='NewReservationLabel'>Name</label>
+          <input
           className='NewReservationInput'
           id='name'
           type='text'
@@ -25,34 +32,41 @@ export class NewReservation extends React.Component {
           placeholder='Name'
           onChange={this.handlChange}
           value={this.state.name} />
-        <label htmlFor='date' className='NewReservationLabel'>Date</label>
-        <input
+        </div>
+        <div className={'labelInput__div'}>
+          <label htmlFor='date' className='NewReservationLabel'>Date</label>
+          <input
           className='NewReservationInput'
           id='date'
           type='text'
           name='date'
           placeholder='Date'
           onChange={this.handlChange}
-          value={this.state.name} />
-        <label htmlFor='time' className='NewReservationLabel'>Time</label>
-        <input
+          value={this.state.date} />
+        </div>
+        <div className={'labelInput__div'}>
+          <label htmlFor='time' className='NewReservationLabel'>Time</label>
+          <input
           className='NewReservationInput'
           id='time'
           type='time'
           name='time'
           placeholder='Time'
           onChange={this.handlChange}
-          value={this.state.name} />
-        <label htmlFor='numOfGuests' className='NewReservationLabel'>Number Of Guests</label>
-        <input
+          value={this.state.time} />
+        </div>
+        <div className={'labelInput__div'}>
+         <label htmlFor='numOfGuests' className='NewReservationLabel'>Number Of Guests</label>
+          <input
           className='NewReservationInput'
           id='numOfGuests'
           type='number'
           name='numOfGuests'
           placeholder='Number Of Guests'
           onChange={this.handlChange}
-          value={this.state.name} />
-          <button className={'makeReservationButton'}>Make Reservation</button>
+          value={this.state.number} />
+        </div>
+        <button className={'makeReservationButton'}>Make Reservation</button>
       </form>
     )
   }
