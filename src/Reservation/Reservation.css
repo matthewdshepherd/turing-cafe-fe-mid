@@ -1,0 +1,24 @@
+.reservationCard {
+  min-width: 200px;
+  max-width: 350px;
+  border: 4px solid teal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10%;
+  color: teal;
+  padding: 10px 0;
+  margin: 20px;
+}
+
+.cancelButton {
+  width: 80%;
+  background-color: teal;
+  color: white;
+  height: 20px;
+}
+
+.reservationText {
+  margin: 10px 0;
+}

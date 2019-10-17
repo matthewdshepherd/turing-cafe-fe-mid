@@ -1,5 +1,7 @@
 import React from 'react'
 import Reservation from '../Reservation/Reservation'
+// import './ReservationsContainer.css'
+
 
 const ReservationsContainer = ({ reservations }) => {
   const reservationCards = reservations.map( reservation => {
@@ -11,11 +13,11 @@ const ReservationsContainer = ({ reservations }) => {
       number={reservation.number}
     />
   })
-  
+
   return (
-    <div>
+    <>
       {reservationCards}
-    </div>
+    </>
   )
 }
 
